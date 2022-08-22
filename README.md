@@ -1,3 +1,3 @@
 # TicTacToe-Page
 ## Page link
-[TicTacToe] (https://alejo-lang-tictac-toe.netlify.app)
+[TicTacToe] (https://alejo-lang-tictactoe.netlify.app)
