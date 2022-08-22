@@ -4,3 +4,162 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+body
+{
+    background: url('./images/woodenFloor.jpg') no-repeat;
+}
+
+.playing
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.playing span 
+{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem;
+}
+
+.gameTable
+{
+    width: 90vw;
+    aspect-ratio: 1/1;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    overflow: hidden;
+    gap: 2px;
+    border-radius: 10px;
+}
+
+.gameTable-sq
+{
+    background-color: rgba(221, 221, 221, 0.5);
+    width: 100%;
+    height: 100%;
+    outline: 1px solid #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.wins
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.wins div 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.wins-X
+{
+    color: rgb(165, 26, 26);
+}
+
+.wins-O
+{
+    color: rgb(26, 26, 165);
+}
+
+.winnerDialog
+{
+    position: absolute;
+    width: 95vw;
+    height: fit-content;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 2px solid #222;
+    border-radius: 1rem;
+}
+
+.winnerDialog::backdrop
+{
+    background-color: rgba(17, 17, 17, 0.25);
+}
+
+.winnerDialog-msg
+{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.winnerDialog-msg span 
+{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2.25rem;
+}
+
+.winnerDialog-closeBtn
+{
+    height: 3rem;
+    width: 50%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    position: relative;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(116, 199, 48);
+    border: 1px solid #000;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.winnerDialog-closeBtn:hover
+{
+    background-color: rgb(136, 235, 54);
+    transform: scale(1.05);
+    transform: translateX(-50%);
+}
+
+.winnerDialog[open]
+{
+    animation: show 0.35s ease normal;
+    -webkit-animation: show 0.35s ease normal;
+}
+
+@keyframes show{
+    from {
+        top: -40%;
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+        top: 40%;
+    }
+}
+
+.winnerDialog.hide
+{
+    animation: normal;
+    -webkit-animation: hide 0.35s ease normal;
+    animation: hide 0.35s ease normal;
+}
+
+@keyframes hide{
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
