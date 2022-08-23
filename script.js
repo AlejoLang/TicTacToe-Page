@@ -18,7 +18,6 @@ Object.values(tableItems).forEach(item => {
         if(event.target.textContent != '' || resultDisplayed){return;}
         event.target.textContent = playing;
         tableArr[event.target.getAttribute('value') - 1] = playing;
-        console.log(tableArr);
         if (playing == 'X'){
             event.target.style.color = 'rgb(165, 26, 26)';
             playing = 'O';
@@ -43,7 +42,7 @@ const reset = () => {
 const analizeTable = (arr) => {
     let con = false;
     winnerComb.forEach(comb => {
-        console.log(arr[comb[0] - 1], arr[comb[1] - 1], arr[comb[2] - 1]);
+
         let an = arr[comb[0] - 1] === arr[comb[1] - 1] && arr[comb[0] - 1] === arr[comb[2] - 1] && arr[comb[0] - 1];
         if(an){
             
@@ -69,10 +68,10 @@ const analizeTable = (arr) => {
             if(arr[i] == undefined){return;}
         }
         
-            document.querySelector('.winnerDialog-msg').textContent = 'Draw';
-            document.querySelector('.winnerDialog').showModal();
-            resultDisplayed = true;
-            return;
+        document.querySelector('.winnerDialog-msg').textContent = 'Draw';
+        document.querySelector('.winnerDialog').showModal();
+        resultDisplayed = true;
+        return;
         
     }   
 }
